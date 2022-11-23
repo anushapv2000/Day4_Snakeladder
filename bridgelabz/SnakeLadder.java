@@ -18,9 +18,9 @@ public class SnakeLadder {
         while (position < 100) {
             dice = rolls();
             int a = random.nextInt(3);
-            option(dice, opt[a]);
+            System.out.println(option(dice, opt[a]));
         }
-        System.out.println(position);
+
     }
 
     public static int rolls()
@@ -31,15 +31,22 @@ public class SnakeLadder {
 
     }
 
-    public static void option(int dice, String opt) {
+    public static int option(int dice, String opt) {
         if (opt == "No Play")
         {
             position=position;
         }
         else if (opt == "Ladder")
         {
-            position = position + dice;
+
             //return position;
+            if((position+dice)>100)
+            {
+                position=position;
+            }
+            else {
+                position = position + dice;
+            }
         }
         else
         {
@@ -48,7 +55,7 @@ public class SnakeLadder {
                 position = 0;
             }
         }
-            //return position;
+            return position;
     }
 }
 
