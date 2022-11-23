@@ -14,12 +14,15 @@ public class SnakeLadder {
     public static void till100() {
         Random random = new Random();
         int dice = 0;
+        int c=0;
         String opt[] = {"No Play", "Ladder", "Snake"};
         while (position < 100) {
             dice = rolls();
+            c=c+1;
             int a = random.nextInt(3);
-            System.out.println(option(dice, opt[a]));
+            System.out.println("Position"+option(dice, opt[a]));
         }
+        System.out.println("number of times the dice was thrown "+c);
 
     }
 
