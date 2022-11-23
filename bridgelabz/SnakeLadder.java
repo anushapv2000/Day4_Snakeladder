@@ -10,13 +10,20 @@ public class SnakeLadder {
 
         int dice=0;
         System.out.println("Game Started with position "+position);
+        Random random=new Random();
         dice=rolls();
-        System.out.println(option(dice,"Ladder"));
+
+        String opt[]={"No Play","Ladder","Snake"};
+        int a=random.nextInt(3);
+        System.out.println(option(dice,opt[a]));
+        //System.out.println(option(dice));
     }
     public static int rolls()
     {
         Random random=new Random();
-        return random.nextInt(6)+1;
+        int r=random.nextInt(6)+1;
+        return r;
+
     }
     public static int option(int dice,String opt){
         if (opt=="No Play")
@@ -29,6 +36,7 @@ public class SnakeLadder {
         else
         {
             position=position-dice;
+
             return position;
         }
 
